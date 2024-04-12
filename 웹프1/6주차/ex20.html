@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>6장 예제</title>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <form method="get" action="form_app.js"> 
+            <h3>회원가입</h3>
+            이메일: <input type="text" name="e-mail" ><br><br>
+
+            전화번호: <input type="number" name="tel" placeholder="- 빼고 입력하시오"><br><br>
+
+            
+            학년: <select name="class" size="1">
+                <option value="claas1" selected >1학년</option>
+                <option value="claas2" >2학년</option>
+                <option value="claas3" >3학년</option>
+                <option value="claas4" >4학년</option>
+            </select>
+
+
+            수강과목: <input type="text" list="course" multiple>
+            <datalist id="course">
+                <option value="웹프1" >
+                <option value="it기술의 이해" >
+                <option value="빅분기" >
+            </datalist>
+            
+            <button type="submit">전송</button>
+            <button type="reset">취소</button>
+    </body> 
+</html>
+
