@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta authors="임순범 박희민"/> 
+<meta copyright="본 예제는 [HTML5 웹프로그래밍 입문] 교재를 이용한 교육에만 사용할 수 있음"/>
+<title> 8 wkd </title>
+</head>
+<body>
+<table border="1">
+<script type="text/javascript">
+	document.write("<caption> 책 주문 입력 내용 </caption>");
+	document.write("<tr>");
+	document.write("<th> 제목 </th>");
+	document.write("</tr>");
+ 
+	var book1 = "1: 컴퓨터와";
+	var book2 = "2: 소셜미디어";
+	var book3 = "3: 멀티미디어";
+	
+	var book_list = book1 + "\n" + book2 + "\n" + book3;
+	var choice = prompt("책 번호를 입력하세요\n" + book_list, "리스트 번호 입력");
+ 
+	if (choice == "1")
+	     title = book1;
+	else if (choice == "2")
+	     title = book2;
+	else if (choice == "3")
+	     title = book3;
+	else {
+	     alert("리스트에 없는 책을 선택하셨습니다.");
+	     title = "";
+	}
+ 
+	document.write("<tr>");
+	document.write("<td>" + title + "</td>");
+	document.write("</tr>");
+</script>
+</table>
+
+</body>
+</html>
