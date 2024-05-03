@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title> 7장 예제 </title>
+<link rel="stylesheet" type="text/css" href="style-size.css"/>
+<link rel="stylesheet" type="text/css" href="style-layout.css"/>
+<link rel="stylesheet" type="text/css" href="style-presentation.css"/>
+<style>
+    .booklist li {
+    position: relative; 
+    display: inline-block;}
+
+    .booklist li .description {
+    display: none; 
+    position: absolute; }
+
+    .booklist li:hover .description {
+    display: block;}
+
+</style>
+</head>
+<body class="booklist">
+    <div class= "head">국내 도서</div>
+    <ul>
+        <li> 
+            <img src="images/book1.jpg"/>
+            <div class="description">컴퓨터 이해 - 최윤철 - 27,000원</div>
+        </li>
+        <li> 
+            <img src="images/book2.jpg"/>
+            <div class="description">알고리즘 - 양성봉 - 24,000원</div>
+        </li>
+        <li> 
+            <img src="images/book3.jpg"/>
+            <div class="description">선형대수학 - 김대수 - 27,000원</div>
+        </li>
+        <li> 
+            <img src="images/book4.jpg"/>
+            <div class="description">프로그래밍 언어 - 유하진 - 29,000원</div>
+        </li>
+        <li> 
+            <img src="images/book5.jpg"/>
+            <div class="description">소셜미디어의 이해와 활용 - 임순범 - 21,000원</div>
+        </li>
+        <li> 
+            <img src="images/book6.jpg"/>
+            <div class="description">멀티미디어 배움터 - 최윤철 - 25,000원</div>
+        </li>
+    </ul>
+</body>
+</html>
