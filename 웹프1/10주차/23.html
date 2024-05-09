@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<title> 23번 </title>
+</head>
+<body>
+
+<script>
+
+function sortAscending(words) {
+    return words.sort();
+}
+
+
+function sortDescending(words) {
+    return words.sort().reverse();
+}
+
+
+function sortWords() {
+    var count = parseInt(prompt("단어의 개수를 입력하시오:"));
+    var words = [];
+
+    
+    for (var i = 0; i < count; i++) {
+        var word = prompt("단어를 입력하시오:");
+        words.push(word);
+    }
+
+    
+    var ascending = sortAscending(words);
+    alert("오름차순 결과: " + ascending.join(', '));
+
+    
+    var descending = sortDescending(words);
+    alert("내림차순 결과: " + descending.join(', '));
+}
+
+
+sortWords();
+</script>
+
+</body>
+</html>

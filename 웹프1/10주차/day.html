@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>오늘의 날짜와 요일 출력</title>
+</head>
+<body>
+
+<script>
+
+var daysofweek = ['일', '월', '화', '수', '목', '금', '토'];
+
+
+var today = new Date();
+
+
+var year = today.getFullYear();
+var month = today.getMonth() + 1; 
+var date = today.getDate();
+var dayofweek = today.getDay(); 
+
+
+var dayofweekstr = daysofweek[dayofweek];
+
+
+document.write("<p>오늘의 날짜: " + year + "년 " + month + "월 " + date + "일</p>");
+document.write("<p>오늘의 요일: " + dayofweekstr + "요일</p>");
+</script>
+
+</body>
+</html>

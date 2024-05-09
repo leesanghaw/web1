@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title> 22번 </title>
+</head>
+<body>
+
+<script>
+function findMinMax() {
+    var count = parseInt(prompt("숫자의 개수를 입력시오:"));
+
+    
+    var numbers = [];
+
+    
+    for (var i = 0; i < count; i++) {
+        var num = parseFloat(prompt("숫자를 입력ㅎ시오:"));
+        numbers.push(num);
+    }
+
+   
+    var max = Math.max.apply(null, numbers);
+    var min = Math.min.apply(null, numbers);
+
+    
+    alert("최대값: " + max + "\n최소값: " + min);
+}
+
+
+findMinMax();
+</script>
+
+</body>
+</html>
