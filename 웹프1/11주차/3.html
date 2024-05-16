@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title> 10장 예제 </title>
+</head>
+<body>
+
+<form action="">
+<input id="username" type="text" value="Name of User" />
+</form>
+
+<script type="text/javascript">
+    var dom = document.getElementById("username");
+    alert(dom.value);
+    var newValue = prompt("새로운 값을 입력하시오", "");
+    dom.value = newValue;
+</script>
+
+</body>
+</html>
