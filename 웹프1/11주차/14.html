@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>14번</title>
+</head>
+<body>
+
+<div id="button_area"></div>
+
+<script>
+
+function createbutton(value) {
+    var button = document.createElement('input');
+    button.type = 'button';
+    button.value = value;
+    return button;
+}
+
+var buttonArea = document.getElementById('button_area');
+
+var button1 = createbutton('자바스크립트에 의해서 동적으로 생성 및 삽입 되었음(1)');
+buttonArea.appendChild(button1);
+
+var button2 = createbutton('자바스크립트에 의해서 동적으로 생성 및 삽입 되었음(2)');
+buttonArea.appendChild(button2);
+</script>
+
+</body>
+</html>

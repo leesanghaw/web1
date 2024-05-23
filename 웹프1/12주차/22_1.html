@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>11장 예제</title>
+</head>
+<body>
+
+<button id="myButton">문자열 입력 버튼 생성</button>
+
+<script>
+
+var button = document.getElementById('myButton');
+
+
+var userInput = prompt('문자열을 입력하세요:');
+
+if (userInput !== null) { 
+        button.textContent = userInput;};
+</script>
+
+</body>
+</html>

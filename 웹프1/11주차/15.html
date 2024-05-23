@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>15번</title>
+</head>
+<body>
+
+<div id='button_area'>
+    <input type='button' value='button 1'/>
+    <input type='button' value='button 2'/>
+    <input type='button' value='button 3'/>
+</div>
+
+<button onclick="delete_first();"> firstChild 요소 삭제 </button>
+
+<script type="text/javascript">
+
+    function remove_self(event) {
+        var btn = event.target;
+        document.getElementById("button_area").removeChild(btn);
+    }
+
+
+    var buttons = document.querySelectorAll('#button_area input[type="button"]');
+    buttons.forEach(function(button) {
+        button.addEventListener('click', remove_self);
+    });
+
+  
+    function delete_first() {
+        var buttonArea = document.getElementById('button_area');
+        var firstButton = buttonArea.querySelector('input[type="button"]');
+        if (firstButton) {
+            buttonArea.removeChild(firstButton);
+        }
+    }
+</script>
+
+</body>
+</html>

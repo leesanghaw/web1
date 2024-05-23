@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title> 11장 예제 </title>
+</head>
+<body>
+    <script type="text/javascript">
+        var stopped = false;
+ 
+        function start() {
+            dom = document.getElementById("sec");
+            dom.value = parseInt(dom.value) + 1;
+            if (!stopped) setTimeout(start,1000);
+        }
+    </script>
+
+    <h2> 11장 예제 </h2>
+    <form action="">
+        <input type="button" value="Start" onclick="stopped=false; setTimeout(start,1000);" />
+        <input type="button" value="Stop" onclick="stopped=true;" />
+        <input type="reset"/> <br><br>
+
+        <input id="sec" type="text" value="0" size="2"/> seconds
+    </form>
+
+</body>
+</html>
