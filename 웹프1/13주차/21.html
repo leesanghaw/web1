@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title>이미지 드래그 앤 드롭</title> 
+    <meta charset="utf-8"/>
+    <style>
+        #drop-zone {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        #drop-zone img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>이미지를 드롭하세요</h1>
+    <div id="drop-zone">여기에 이미지를 드래그 앤 드롭하세요</div>
+    <div id="status"></div>
+
+    <script type="text/javascript">
+        var dropZone = document.getElementById("drop-zone");
+        var statusElement = document.getElementById("status");
+
+        dropZone.addEventListener("dragover", function(e) {
+            e.preventDefault();
+            dropZone.style.borderColor = "#000";
+        });
+
+        dropZone.addEventListener("dragleave", function(e) {
+            dropZone.style.borderColor = "#ccc";
+        });
+
+        dropZone.addEventListener("drop", function(e) {
+            e.preventDefault();
+            dropZone.style.borderColor = "#ccc";
+
+            var files = e.dataTransfer.files;
+            if (files.length > 0) {
+                var file = files[0];
+                if (file.type.startsWith("image/")) {
+                    var img = document.createElement("img");
+                    img.src = URL.createObjectURL(file);
+                    dropZone.innerHTML = "";
+                    dropZone.appendChild(img);
+                    statusElement.textContent = "이미지가 드롭되었습니다: " + file.name;
+                } else {
+                    statusElement.textContent = "이미지가 아닙니다. 이미지를 드롭하세요.";
+                }
+            }
+        });
+    </script>
+</body>
+</html>

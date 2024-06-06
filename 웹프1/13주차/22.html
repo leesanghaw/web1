@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>숙명여대</title>
+</head>
+<body>
+    <h1>현재 위치에서 숙명여대까지의 거리</h1>
+    <div id="current-location">현재 위치: 계산 중입니다...</div>
+    <div id="sookmyung-location">숙명여대 위치: 위도 37.5459582, 경도 126.9625</div>
+    <div id="distance">거리를 계산 중입니다...</div>
+
+    <script>
+        Number.prototype.toRad = function() {
+            return this * Math.PI / 180;
+        };
+
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            var R = 6371; 
+            var dLat = (lat2 - lat1).toRad();
+            var dLon = (lon2 - lon1).toRad();
+            var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + 
+                    Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * 
+                    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            var d = R * c;
+            return d;
+        }
+
+        function showDistance() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var currentLat = position.coords.latitude;
+                    var currentLon = position.coords.longitude;
+                    var sookmyungLat = 37.5459582;
+                    var sookmyungLon = 126.9625;
+                    var distance = calculateDistance(currentLat, currentLon, sookmyungLat, sookmyungLon);
+
+                    document.getElementById('current-location').textContent = `현재 위치: 위도 ${currentLat.toFixed(6)}, 경도 ${currentLon.toFixed(6)}`;
+                    document.getElementById('distance').textContent = `현재 위치에서 숙명여대까지의 거리는 약 ${distance.toFixed(2)} km 입니다.`;
+                }, function(error) {
+                    document.getElementById('current-location').textContent = `위치 정보를 가져오는데 실패했습니다: ${error.message}`;
+                    document.getElementById('distance').textContent = `거리를 계산할 수 없습니다.`;
+                });
+            } else {
+                document.getElementById('current-location').textContent = "Geolocation을 지원하지 않는 브라우저입니다.";
+                document.getElementById('distance').textContent = "거리를 계산할 수 없습니다.";
+            }
+        }
+
+        showDistance();
+    </script>
+</body>
+</html>

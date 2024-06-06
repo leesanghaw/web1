@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title> 12장 </title> 
+    <meta charset="utf-8"/>
+</head>
+<body>
+	<div id="src" style="display: block;">
+		<img id="html5" src="C:\Users\Admin\Desktop\vscode\웹프1\image\icon_html5.png" style="display: inline; width:150px;" draggable = "true">
+		<img id="css3" src="C:\Users\Admin\Desktop\vscode\웹프1\image\icon_css3.png" style="display: inline; width:150px;" draggable = "true">
+		<img id="js" src="C:\Users\Admin\Desktop\vscode\웹프1\image\icon_js.png" style="display: inline; width:150px;" draggable = "true">
+	</div>
+	<div id="process"></div>
+
+    <script type="text/javascript">
+    var src = document.getElementById("src"),
+	    srcId,i=0;
+	    process = document.getElementById("process");
+
+    src.ondragstart = function(e){
+	    srcId = e.target.id;
+	    process.innerHTML = "start: "+srcId+"<br/>";  
+    }
+    src.ondrag = function(e){  
+		process.innerHTML = "start: "+srcId+"<br/>drag: "+srcId+" ["+(i++)+"]";  
+	}
+    src.ondragend = function(e){
+	    process.innerHTML += "<br/>end: "+srcId+"<br/>";
+    }
+    </script>
+</body>
+</html>
